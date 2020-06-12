@@ -6,6 +6,7 @@ class App extends Component {
     super(props);
     this.state = {
       filmArr: [],
+      displayLogo: true,
     };
   }
 
@@ -27,8 +28,27 @@ class App extends Component {
       });
   }
 
+  handleClick() {
+    this.setState({ displayLogo: false });
+  }
+
   render() {
-    return <div id="filmContainer">{this.state.filmArr}</div>;
+    if (this.state.displayLogo === true) {
+      return (
+        <div className="logoContainer">
+          <div className="container-fluid logoContainer">
+            <img
+              className="col-8 mb-5"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
+              alt="Stuid Ghibli Logo"
+            />
+          </div>
+          <button onClick={() => this.handleClick()}>Load Films</button>
+        </div>
+      );
+    } else {
+      return <div id="filmContainer">{this.state.filmArr}</div>;
+    }
   }
 }
 

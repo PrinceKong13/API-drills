@@ -6,3 +6,11 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
