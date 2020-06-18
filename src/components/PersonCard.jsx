@@ -2,7 +2,7 @@ import React from "react";
 
 const PersonCard = (props) => {
   return (
-    <div className="card mb-1 mr-1 col-2">
+    <div className="card mb-1 mr-1 p-0 col-2">
       <div className="card-header">{props.name}</div>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">Age: {props.age}</li>

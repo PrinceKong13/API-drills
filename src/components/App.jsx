@@ -15,7 +15,6 @@ class App extends Component {
     fetch("https://ghibliapi.herokuapp.com/films")
       .then((res) => res.json())
       .then((objArr) => {
-        console.log(objArr);
         let newFilmArr = objArr.map((film) => (
           <FilmCard
             key={film.id}
@@ -25,8 +24,7 @@ class App extends Component {
           />
         ));
         this.setState({ infoArr: newFilmArr });
-        console.log(newFilmArr);
-      });
+      }).catch(err => console.log(err));
     this.setState({ displayLogo: false });
   }
 
@@ -34,7 +32,6 @@ class App extends Component {
     fetch("https://ghibliapi.herokuapp.com/people")
       .then((res) => res.json())
       .then((objArr) => {
-        console.log(objArr);
         let newPersonArr = objArr.map((person) => (
           <PersonCard
             key={person.id}
@@ -45,8 +42,7 @@ class App extends Component {
           />
         ));
         this.setState({ infoArr: newPersonArr });
-        console.log(newPersonArr);
-      });
+      }).catch (err => console.log(err))
     this.setState({ displayLogo: false });
   }
 
